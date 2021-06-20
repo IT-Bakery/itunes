@@ -1,0 +1,88 @@
+{
+	"info": {
+		"_postman_id": "1b998a57-d492-4393-bda5-4b695be623ea",
+		"name": "iTunes",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "search for artists",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/artists/abba",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"artists",
+						"abba"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add favourite artist",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "userId",
+						"value": "1",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"artistId\": 372976,\r\n    \"artistName\": \"ABBA\",\r\n    \"artistLinkUrl\": \"https://music.apple.com/us/artist/abba/372976?uo=4\",\r\n    \"amgArtistId\": 3492\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/favourite/",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"favourite",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get favourite artists top albums",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "userid",
+						"value": "1",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8080/favourite/top/",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"favourite",
+						"top",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
